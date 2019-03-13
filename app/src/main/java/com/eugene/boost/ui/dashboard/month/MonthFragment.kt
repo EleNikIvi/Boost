@@ -1,4 +1,4 @@
-package com.eugene.boost.ui.dashboard
+package com.eugene.boost.ui.dashboard.month
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,9 +8,9 @@ import androidx.lifecycle.ViewModelProviders
 import com.eugene.boost.R
 import com.eugene.boost.ui.base.BaseFragment
 
-class DashboardFragment : BaseFragment() {
+class MonthFragment : BaseFragment() {
 
-    private lateinit var viewModel: DashboardViewModel
+    private lateinit var viewModel: MonthViewModel
 
 
     override fun onCreateView(
@@ -18,8 +18,8 @@ class DashboardFragment : BaseFragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        viewModel = ViewModelProviders.of(this).get(DashboardViewModel::class.java)
+        viewModel = ViewModelProviders.of(this).get(MonthViewModel::class.java)
 
-        return inflater.inflate(R.layout.fragment_dashboard, container, false)
+        return inflater.inflate(R.layout.fragment_month, container, false)
     }
 }

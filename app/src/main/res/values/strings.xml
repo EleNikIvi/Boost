@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Boost</string>
+    <string name="app_today">Today</string>
+    <string name="app_tomorrow">Tomorrow</string>
+    <string name="app_week">Week</string>
+    <string name="app_month">Month</string>
 </resources>
