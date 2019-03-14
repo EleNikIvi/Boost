@@ -16,7 +16,7 @@ class MainActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        setTheme(R.style.AppTheme_Default)
+        setTheme(R.style.AppTheme_Light)
 
         setContentView(R.layout.activity_main)
 

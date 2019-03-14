@@ -6,11 +6,23 @@
     android:layout_height="match_parent"
     tools:context=".ui.dashboard.DashboardFragment">
 
+    <fragment
+        android:id="@+id/frm_navigation_dashboard"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bnv_dashboard"
+        app:navGraph="@navigation/navigation_dashboard" />
+
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bnv_dashboard"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_gravity="bottom"
+        android:background="?backgroundColor"
+        app:itemIconTint="@drawable/sl_bottom_navigation_item"
+        app:itemTextColor="@drawable/sl_bottom_navigation_item"
+        app:labelVisibilityMode="labeled"
         app:menu="@menu/menu_dashboard_bottom" />
 </RelativeLayout>
