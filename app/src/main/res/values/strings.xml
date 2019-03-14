@@ -4,4 +4,5 @@
     <string name="app_tomorrow">Tomorrow</string>
     <string name="app_week">Week</string>
     <string name="app_month">Month</string>
+    <string name="app_settings">Settings</string>
 </resources>
