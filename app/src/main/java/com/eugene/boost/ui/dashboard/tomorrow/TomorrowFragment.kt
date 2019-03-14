@@ -22,4 +22,16 @@ class TomorrowFragment : BaseFragment() {
 
         return inflater.inflate(R.layout.fragment_tomorrow, container, false)
     }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        initView()
+    }
+
+
+    private fun initView() {
+
+        mainActivity?.toolbar?.title = getString(R.string.app_tomorrow)
+    }
 }

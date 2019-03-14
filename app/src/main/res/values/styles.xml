@@ -14,4 +14,11 @@
         <item name="inactiveColor">@color/lightInactiveColor</item>
         <item name="backgroundColor">@color/lightBackgroundColor</item>
     </style>
+
+    <style name="AppToolbar">
+        <item name="android:background">?backgroundColor</item>
+        <item name="android:textColorPrimary">?activeColor</item>
+        <item name="android:textColorSecondary">?activeColor</item>
+        <item name="android:tint">?activeColor</item>
+    </style>
 </resources>

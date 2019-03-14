@@ -10,7 +10,7 @@ class MainActivity : BaseActivity() {
 
     private lateinit var viewModel: MainViewModel
 
-    private var tlbMain: Toolbar? = null
+    var toolbar: Toolbar? = null
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,14 +35,13 @@ class MainActivity : BaseActivity() {
 
     private fun initView() {
 
-        tlbMain = findViewById(R.id.tlb_main)
-
-        setSupportActionBar(tlbMain)
+        toolbar = findViewById(R.id.tlb_main)
+        setSupportActionBar(toolbar)
         supportActionBar?.title = ""
     }
 
     private fun destroyView() {
 
-        tlbMain = null
+        toolbar = null
     }
 }
