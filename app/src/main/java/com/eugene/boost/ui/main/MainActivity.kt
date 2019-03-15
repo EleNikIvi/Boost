@@ -10,7 +10,10 @@ import com.eugene.boost.ui.base.BaseActivity
 
 class MainActivity : BaseActivity() {
 
-    private lateinit var viewModel: MainViewModel
+    private val viewModel by lazy {
+        ViewModelProviders.of(this).get(MainViewModel::class.java)
+    }
+
 
     var toolbar: Toolbar? = null
 
@@ -21,8 +24,6 @@ class MainActivity : BaseActivity() {
         setTheme(R.style.AppTheme_Light)
 
         setContentView(R.layout.activity_main)
-
-        viewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
 
         initView()
     }

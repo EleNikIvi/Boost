@@ -12,7 +12,10 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class DashboardFragment : BaseFragment() {
 
-    private lateinit var viewModel: DashboardViewModel
+    private val viewModel by lazy {
+        ViewModelProviders.of(this).get(DashboardViewModel::class.java)
+    }
+
 
     private var dashboardBottomNavigation: BottomNavigationView? = null
 
@@ -21,8 +24,6 @@ class DashboardFragment : BaseFragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
-        viewModel = ViewModelProviders.of(this).get(DashboardViewModel::class.java)
 
         setHasOptionsMenu(true)
 

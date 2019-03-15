@@ -10,15 +10,15 @@ import com.eugene.boost.ui.base.BaseFragment
 
 class TodayFragment : BaseFragment() {
 
-    private lateinit var viewModel: TodayViewModel
+    private val viewModel by lazy {
+        ViewModelProviders.of(this).get(TodayViewModel::class.java)
+    }
 
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
-        viewModel = ViewModelProviders.of(this).get(TodayViewModel::class.java)
 
         return inflater.inflate(R.layout.fragment_today, container, false)
     }

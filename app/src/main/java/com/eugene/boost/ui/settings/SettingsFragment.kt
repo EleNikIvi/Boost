@@ -10,15 +10,15 @@ import com.eugene.boost.ui.base.BaseFragment
 
 class SettingsFragment : BaseFragment() {
 
-    private lateinit var viewModel: SettingsViewModel
+    private val viewModel by lazy {
+        ViewModelProviders.of(this).get(SettingsViewModel::class.java)
+    }
 
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
-        viewModel = ViewModelProviders.of(this).get(SettingsViewModel::class.java)
 
         return inflater.inflate(R.layout.fragment_settings, container, false)
     }

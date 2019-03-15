@@ -10,15 +10,15 @@ import com.eugene.boost.ui.base.BaseFragment
 
 class WeekFragment : BaseFragment() {
 
-    private lateinit var viewModel: WeekViewModel
+    private val viewModel by lazy {
+        ViewModelProviders.of(this).get(WeekViewModel::class.java)
+    }
 
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
-        viewModel = ViewModelProviders.of(this).get(WeekViewModel::class.java)
 
         return inflater.inflate(R.layout.fragment_week, container, false)
     }
