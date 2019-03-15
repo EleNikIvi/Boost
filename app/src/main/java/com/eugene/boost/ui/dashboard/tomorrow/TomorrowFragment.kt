@@ -32,6 +32,6 @@ class TomorrowFragment : BaseFragment() {
 
     private fun initView() {
 
-        mainActivity?.toolbar?.title = getString(R.string.app_tomorrow)
+        setToolbarTitle(getString(R.string.app_tomorrow))
     }
 }

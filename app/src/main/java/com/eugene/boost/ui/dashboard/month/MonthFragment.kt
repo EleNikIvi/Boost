@@ -32,6 +32,6 @@ class MonthFragment : BaseFragment() {
 
     private fun initView() {
 
-        mainActivity?.toolbar?.title = getString(R.string.app_month)
+        setToolbarTitle(getString(R.string.app_month))
     }
 }

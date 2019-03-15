@@ -3,6 +3,8 @@ package com.eugene.boost.ui.main
 import android.os.Bundle
 import androidx.appcompat.widget.Toolbar
 import androidx.lifecycle.ViewModelProviders
+import androidx.navigation.Navigation
+import androidx.navigation.ui.setupWithNavController
 import com.eugene.boost.R
 import com.eugene.boost.ui.base.BaseActivity
 
@@ -35,9 +37,13 @@ class MainActivity : BaseActivity() {
 
     private fun initView() {
 
-        toolbar = findViewById(R.id.tlb_main)
+        toolbar = findViewById(R.id.main_toolbar)
         setSupportActionBar(toolbar)
-        supportActionBar?.title = ""
+        supportActionBar?.title = getString(R.string.app_name)
+
+        toolbar?.setupWithNavController(
+            Navigation.findNavController(this, R.id.main_navigation)
+        )
     }
 
     private fun destroyView() {

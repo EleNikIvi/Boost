@@ -7,4 +7,10 @@ abstract class BaseFragment : Fragment() {
 
     protected val mainActivity: MainActivity?
         get() = activity as MainActivity
+
+
+    protected fun setToolbarTitle(title: String) {
+
+        mainActivity?.toolbar?.title = title
+    }
 }

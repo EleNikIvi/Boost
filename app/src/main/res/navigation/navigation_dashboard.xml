@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/dashboard_navigation"
+    app:startDestination="@id/today_fragment">
+
+    <fragment
+        android:id="@+id/today_fragment"
+        android:name="com.eugene.boost.ui.dashboard.today.TodayFragment"
+        android:label="today_fragment"
+        tools:layout="@layout/fragment_today" />
+
+    <fragment
+        android:id="@+id/tomorrow_fragment"
+        android:name="com.eugene.boost.ui.dashboard.tomorrow.TomorrowFragment"
+        android:label="fragment_tomorrow"
+        tools:layout="@layout/fragment_tomorrow" />
+
+    <fragment
+        android:id="@+id/week_fragment"
+        android:name="com.eugene.boost.ui.dashboard.week.WeekFragment"
+        android:label="week_fragment"
+        tools:layout="@layout/fragment_week" />
+
+    <fragment
+        android:id="@+id/month_fragment"
+        android:name="com.eugene.boost.ui.dashboard.month.MonthFragment"
+        android:label="month_fragment"
+        tools:layout="@layout/fragment_month" />
+</navigation>

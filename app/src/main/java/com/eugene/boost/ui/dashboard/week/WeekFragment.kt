@@ -32,6 +32,6 @@ class WeekFragment : BaseFragment() {
 
     private fun initView() {
 
-        mainActivity?.toolbar?.title = getString(R.string.app_week)
+        setToolbarTitle(getString(R.string.app_week))
     }
 }

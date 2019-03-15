@@ -32,6 +32,6 @@ class TodayFragment : BaseFragment() {
 
     private fun initView() {
 
-        mainActivity?.toolbar?.title = getString(R.string.app_today)
+        setToolbarTitle(getString(R.string.app_today))
     }
 }
