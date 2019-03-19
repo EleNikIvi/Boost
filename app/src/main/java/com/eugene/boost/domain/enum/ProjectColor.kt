@@ -1,8 +1,24 @@
 package com.eugene.boost.domain.enum
 
-enum class ProjectColor(val rgb: Int) {
-    RED(0xFF0000),
-    GREEN(0x00FF00),
-    BLUE(0x0000FF),
-    WHITE(0xFFFFFF)
+enum class ProjectColor(var rgb: Int) {
+    BERRY_RED(0xB8255F),
+    RED(0xDB4035),
+    ORANGE(0xFF9933),
+    YELLOW(0xFAD000),
+    OLIVE_GREEN(0xAFB83B),
+    LIME_GREEN(0x7ECC49),
+    GREEN(0x299438),
+    MINT_GREEN(0x6ACCBC),
+    TEAL(0x158FAD),
+    SKY_BLUE(0x14AAF5),
+    LIGHT_BLUE(0x96C3EB),
+    BLUE(0x4073FF),
+    GRAPE(0x884DFF),
+    VIOLET(0xAF38EB),
+    LAVENDER(0xEB96EB),
+    MAGENTA(0xE05194),
+    SALMON(0xFF8D85),
+    CHARCOAL(0x808080),
+    GREY(0xB8B8B8),
+    TAUPE(0xCCAC93),
 }
