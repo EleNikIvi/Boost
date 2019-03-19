@@ -15,6 +15,9 @@ data class ProjectEntity(
     @ColumnInfo(name = "id")
     var id: Int,
 
+    @ColumnInfo(name = "create_date")
+    var createDate: Long = 0,
+
     @ColumnInfo(name = "name")
     var name: String,
 
