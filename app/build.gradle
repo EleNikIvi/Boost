@@ -23,6 +23,8 @@ android {
 }
 
 dependencies {
+    def koin_version = "2.0.0-beta-3"
+
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
@@ -40,6 +42,10 @@ dependencies {
 
     implementation 'androidx.room:room-runtime:2.0.0'
     kapt 'androidx.room:room-compiler:2.0.0'
+
+    implementation "org.koin:koin-core:$koin_version"
+    implementation "org.koin:koin-androidx-scope:$koin_version"
+    implementation "org.koin:koin-androidx-viewmodel:$koin_version"
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.1.1'
