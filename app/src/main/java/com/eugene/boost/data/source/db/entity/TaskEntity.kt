@@ -1,6 +1,7 @@
-package com.eugene.boost.data.db.entity
+package com.eugene.boost.data.source.db.entity
 
 import androidx.room.*
+import com.eugene.boost.data.source.db.entity.ProjectEntity
 
 @Entity(
     tableName = "tasks",

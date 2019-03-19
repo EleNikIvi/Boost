@@ -1,4 +1,4 @@
-package com.eugene.boost.data.db.entity
+package com.eugene.boost.data.source.db.entity
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

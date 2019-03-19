@@ -1,8 +1,8 @@
-package com.eugene.boost.data.db.dao
+package com.eugene.boost.data.source.db.dao
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
-import com.eugene.boost.data.db.entity.TaskEntity
+import com.eugene.boost.data.source.db.entity.TaskEntity
 
 @Dao
 interface TaskDao {
@@ -20,11 +20,11 @@ interface TaskDao {
     fun deleteById(id: Int)
 
     @Query("SELECT * FROM tasks ORDER BY create_date")
-    fun getAll(): LiveData<List<TaskEntity>>
+    fun getAll(): List<TaskEntity>
 
     @Query("SELECT * FROM tasks WHERE project_id = :projectId ORDER BY create_date")
     fun getAllByProjectId(projectId: Int)
 
     @Query("SELECT * FROM tasks WHERE id = :id")
-    fun getById(id: Int): LiveData<TaskEntity>
+    fun getById(id: Int): TaskEntity
 }

@@ -1,3 +1,6 @@
 package com.eugene.boost
 
-object AppConstants
+object AppConstants {
+
+    const val AppDatabaseName = "BoostDatabase.db"
+}
