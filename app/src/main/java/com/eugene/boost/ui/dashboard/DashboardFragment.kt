@@ -2,22 +2,17 @@ package com.eugene.boost.ui.dashboard
 
 import android.os.Bundle
 import android.view.*
-import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.NavigationUI
 import com.eugene.boost.R
 import com.eugene.boost.ui.base.BaseFragment
-import com.google.android.material.bottomnavigation.BottomNavigationView
+import kotlinx.android.synthetic.main.fragment_dashboard.*
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class DashboardFragment : BaseFragment() {
 
-    private val viewModel by lazy {
-        ViewModelProviders.of(this).get(DashboardViewModel::class.java)
-    }
-
-
-    private var dashboardBottomNavigation: BottomNavigationView? = null
+    val dashboardViewModel: DashboardViewModel by viewModel()
 
 
     override fun onCreateView(
@@ -34,13 +29,6 @@ class DashboardFragment : BaseFragment() {
         super.onViewCreated(view, savedInstanceState)
 
         initView()
-    }
-
-    override fun onDestroyView() {
-
-        destroyView()
-
-        super.onDestroyView()
     }
 
 
@@ -65,17 +53,10 @@ class DashboardFragment : BaseFragment() {
 
     private fun initView() {
 
-        dashboardBottomNavigation = view?.findViewById(R.id.dashboard_bottom_navigation)
-
         NavigationUI
             .setupWithNavController(
-                dashboardBottomNavigation!!,
+                dashboard_bottom_navigation,
                 Navigation.findNavController(requireActivity(), R.id.dashboard_navigation)
             )
-    }
-
-    private fun destroyView() {
-
-        dashboardBottomNavigation = null
     }
 }
