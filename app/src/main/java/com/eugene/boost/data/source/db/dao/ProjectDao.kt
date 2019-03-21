@@ -1,6 +1,5 @@
 package com.eugene.boost.data.source.db.dao
 
-import androidx.lifecycle.LiveData
 import androidx.room.*
 import com.eugene.boost.data.source.db.entity.ProjectEntity
 
