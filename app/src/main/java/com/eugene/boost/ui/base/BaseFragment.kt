@@ -11,6 +11,6 @@ abstract class BaseFragment : Fragment() {
 
     protected fun setToolbarTitle(title: String) {
 
-        mainActivity?.toolbar?.title = title
+        mainActivity?.mainToolbar?.title = title
     }
 }

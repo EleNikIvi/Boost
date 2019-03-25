@@ -1,16 +1,18 @@
 package com.eugene.boost.ui.main
 
 import android.os.Bundle
+import androidx.appcompat.widget.Toolbar
 import androidx.navigation.Navigation
 import androidx.navigation.ui.setupWithNavController
 import com.eugene.boost.R
 import com.eugene.boost.ui.base.BaseActivity
-import kotlinx.android.synthetic.main.activity_main.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainActivity : BaseActivity() {
 
     val mainViewModel: MainViewModel by viewModel()
+
+    var mainToolbar: Toolbar? = null
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,11 +28,17 @@ class MainActivity : BaseActivity() {
 
     private fun initView() {
 
-        setSupportActionBar(main_toolbar)
-        supportActionBar?.title = getString(R.string.app_name)
+        mainToolbar = findViewById(R.id.main_toolbar)
 
-        main_toolbar.setupWithNavController(
-            Navigation.findNavController(this, R.id.main_navigation)
-        )
+        mainToolbar?.let {
+
+            setSupportActionBar(it)
+
+            supportActionBar?.title = getString(R.string.app_name)
+
+            it.setupWithNavController(
+                Navigation.findNavController(this, R.id.main_navigation)
+            )
+        }
     }
 }
