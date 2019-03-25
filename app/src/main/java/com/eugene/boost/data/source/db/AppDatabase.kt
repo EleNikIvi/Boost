@@ -7,7 +7,7 @@ import com.eugene.boost.data.source.db.dao.TaskDao
 import com.eugene.boost.data.source.db.entity.ProjectEntity
 import com.eugene.boost.data.source.db.entity.TaskEntity
 
-@Database(entities = [ProjectEntity::class, TaskEntity::class], version = 1)
+@Database(entities = [ProjectEntity::class, TaskEntity::class], version = 1, exportSchema = false)
 abstract class AppDatabase : RoomDatabase() {
 
     abstract fun projectDao(): ProjectDao

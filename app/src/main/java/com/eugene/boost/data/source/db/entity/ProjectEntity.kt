@@ -2,17 +2,15 @@ package com.eugene.boost.data.source.db.entity
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
-import androidx.room.Index
 import androidx.room.PrimaryKey
 
 @Entity(
-    tableName = "projects",
-    indices = [Index("id")]
+    tableName = "projects"
 )
 data class ProjectEntity(
 
     @PrimaryKey(autoGenerate = true)
-    @ColumnInfo(name = "id")
+    @ColumnInfo(name = "id", index = true)
     var id: Int,
 
     @ColumnInfo(name = "create_date")

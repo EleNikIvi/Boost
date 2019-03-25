@@ -9,13 +9,12 @@ import androidx.room.*
         parentColumns = arrayOf("id"),
         childColumns = arrayOf("project_id"),
         onDelete = ForeignKey.CASCADE
-    )],
-    indices = [Index("id")]
+    )]
 )
 data class TaskEntity(
 
     @PrimaryKey(autoGenerate = true)
-    @ColumnInfo(name = "id")
+    @ColumnInfo(name = "id", index = true)
     var id: Int = 0,
 
     @ColumnInfo(name = "create_date")
@@ -42,6 +41,6 @@ data class TaskEntity(
     @ColumnInfo(name = "status")
     var status: Int = 0,
 
-    @ColumnInfo(name = "project_id")
+    @ColumnInfo(name = "project_id", index = true)
     var projectId: Int
 )

@@ -22,7 +22,7 @@ interface TaskDao {
     fun getAll(): List<TaskEntity>
 
     @Query("SELECT * FROM tasks WHERE project_id = :projectId ORDER BY create_date")
-    fun getAllByProjectId(projectId: Int)
+    fun getAllByProjectId(projectId: Int): List<TaskEntity>
 
     @Query("SELECT * FROM tasks WHERE id = :id")
     fun getById(id: Int): TaskEntity
