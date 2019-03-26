@@ -15,7 +15,7 @@
             app:destination="@id/settings_fragment" />
         <action
             android:id="@+id/action_dashboard_fragment_to_all_projects_fragment"
-            app:destination="@id/project_all_projects_fragment" />
+            app:destination="@id/project_projects_fragment" />
     </fragment>
 
     <fragment
@@ -24,8 +24,8 @@
         android:label="settings_fragment"
         tools:layout="@layout/fragment_settings" />
     <fragment
-        android:id="@+id/project_all_projects_fragment"
-        android:name="com.eugene.boost.ui.project.allprojects.AllProjectsFragment"
+        android:id="@+id/project_projects_fragment"
+        android:name="com.eugene.boost.ui.project.projects.ProjectsFragment"
         android:label="project_all_projects_fragment"
-        tools:layout="@layout/fragment_project_all_projects" />
+        tools:layout="@layout/fragment_project_projects" />
 </navigation>

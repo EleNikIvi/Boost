@@ -2,7 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/all_projects_item"
-        android:title="@string/app_all_projects" />
+        android:title="@string/app_projects" />
     <item
         android:id="@+id/settings_item"
         android:title="@string/app_settings" />

@@ -91,12 +91,6 @@
                   <entry key="dashboard_fragment">
                     <value>
                       <LayoutPositions>
-                        <option name="myPosition">
-                          <Point>
-                            <option name="x" value="-271" />
-                            <option name="y" value="-229" />
-                          </Point>
-                        </option>
                         <option name="myPositions">
                           <map>
                             <entry key="action_dashboard_fragment_to_all_projects_fragment">
@@ -114,28 +108,14 @@
                       </LayoutPositions>
                     </value>
                   </entry>
-                  <entry key="project_all_projects_fragment">
+                  <entry key="project_projects_fragment">
                     <value>
-                      <LayoutPositions>
-                        <option name="myPosition">
-                          <Point>
-                            <option name="x" value="-266" />
-                            <option name="y" value="94" />
-                          </Point>
-                        </option>
-                      </LayoutPositions>
+                      <LayoutPositions />
                     </value>
                   </entry>
                   <entry key="settings_fragment">
                     <value>
-                      <LayoutPositions>
-                        <option name="myPosition">
-                          <Point>
-                            <option name="x" value="-49" />
-                            <option name="y" value="-223" />
-                          </Point>
-                        </option>
-                      </LayoutPositions>
+                      <LayoutPositions />
                     </value>
                   </entry>
                 </map>

@@ -43,7 +43,7 @@ class DashboardFragment : BaseFragment() {
         when (item?.itemId) {
             R.id.all_projects_item -> {
 
-                findNavController().navigate(R.id.project_all_projects_fragment)
+                findNavController().navigate(R.id.project_projects_fragment)
             }
             R.id.settings_item -> {
 
