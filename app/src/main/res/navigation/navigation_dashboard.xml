@@ -3,29 +3,29 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/dashboard_navigation"
-    app:startDestination="@id/today_fragment">
+    app:startDestination="@id/dashboard_today_fragment">
 
     <fragment
-        android:id="@+id/today_fragment"
+        android:id="@+id/dashboard_today_fragment"
         android:name="com.eugene.boost.ui.dashboard.today.TodayFragment"
-        android:label="today_fragment"
-        tools:layout="@layout/fragment_today" />
+        android:label="dashboard_today_fragment"
+        tools:layout="@layout/fragment_dashboard_today" />
 
     <fragment
-        android:id="@+id/tomorrow_fragment"
+        android:id="@+id/dashboard_tomorrow_fragment"
         android:name="com.eugene.boost.ui.dashboard.tomorrow.TomorrowFragment"
-        android:label="fragment_tomorrow"
-        tools:layout="@layout/fragment_tomorrow" />
+        android:label="dashboard_tomorrow_fragment"
+        tools:layout="@layout/fragment_dashboard_tomorrow" />
 
     <fragment
-        android:id="@+id/week_fragment"
+        android:id="@+id/dashboard_week_fragment"
         android:name="com.eugene.boost.ui.dashboard.week.WeekFragment"
-        android:label="week_fragment"
-        tools:layout="@layout/fragment_week" />
+        android:label="dashboard_week_fragment"
+        tools:layout="@layout/fragment_dashboard_week" />
 
     <fragment
-        android:id="@+id/month_fragment"
+        android:id="@+id/dashboard_month_fragment"
         android:name="com.eugene.boost.ui.dashboard.month.MonthFragment"
-        android:label="month_fragment"
-        tools:layout="@layout/fragment_month" />
+        android:label="dashboard_month_fragment"
+        tools:layout="@layout/fragment_dashboard_month" />
 </navigation>

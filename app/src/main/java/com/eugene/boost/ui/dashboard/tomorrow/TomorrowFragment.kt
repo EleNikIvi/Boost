@@ -18,7 +18,7 @@ class TomorrowFragment : BaseFragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        return inflater.inflate(R.layout.fragment_tomorrow, container, false)
+        return inflater.inflate(R.layout.fragment_dashboard_tomorrow, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

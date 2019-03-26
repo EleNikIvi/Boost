@@ -18,7 +18,7 @@ class WeekFragment : BaseFragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        return inflater.inflate(R.layout.fragment_week, container, false)
+        return inflater.inflate(R.layout.fragment_dashboard_week, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

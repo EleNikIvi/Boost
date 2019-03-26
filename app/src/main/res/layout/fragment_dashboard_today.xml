@@ -3,7 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#b2b2b2"
-    tools:context=".ui.dashboard.tomorrow.TomorrowFragment">
+    tools:context=".ui.dashboard.today.TodayFragment">
 
 </FrameLayout>
