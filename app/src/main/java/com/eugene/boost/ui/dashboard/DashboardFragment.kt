@@ -41,6 +41,10 @@ class DashboardFragment : BaseFragment() {
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
 
         when (item?.itemId) {
+            R.id.all_projects_item -> {
+
+                findNavController().navigate(R.id.project_all_projects_fragment)
+            }
             R.id.settings_item -> {
 
                 findNavController().navigate(R.id.settings_fragment)
