@@ -1,3 +1,8 @@
 package com.eugene.boost.domain.repository
 
-interface ProjectRepository
+import com.eugene.boost.domain.model.ProjectModel
+
+interface ProjectRepository {
+
+    fun getAllProjects(): List<ProjectModel>
+}

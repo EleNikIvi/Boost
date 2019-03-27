@@ -13,6 +13,8 @@ import com.eugene.boost.ui.dashboard.today.TodayViewModel
 import com.eugene.boost.ui.dashboard.tomorrow.TomorrowViewModel
 import com.eugene.boost.ui.dashboard.week.WeekViewModel
 import com.eugene.boost.ui.main.MainViewModel
+import com.eugene.boost.ui.project.editor.EditorViewModel
+import com.eugene.boost.ui.project.projects.ProjectsViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
@@ -31,9 +33,13 @@ val appModule = module {
     single<TaskRepository> { TaskRepositoryImpl(get()) }
 
     viewModel { MainViewModel() }
+
     viewModel { DashboardViewModel() }
     viewModel { TodayViewModel() }
     viewModel { TomorrowViewModel() }
     viewModel { WeekViewModel() }
     viewModel { MonthViewModel() }
+
+    viewModel { ProjectsViewModel(get()) }
+    viewModel { EditorViewModel() }
 }
