@@ -11,6 +11,7 @@ data class TaskModel(
     var description: String = "",
     var estimatedTime: Long = 0,
     var elapsedTime: Long = 0,
-    var priority: TaskPriority = TaskPriority.PRIORITY_4,
-    var status: TaskStatus = TaskStatus.OPEN
+    var priority: TaskPriority = TaskPriority.PRIORITY_0,
+    var status: TaskStatus = TaskStatus.OPEN,
+    val projectId: Int = 0
 )
