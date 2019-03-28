@@ -1,6 +1,6 @@
 <resources>
 
-    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
         <item name="android:windowBackground">@android:color/transparent</item>
     </style>
 
@@ -10,7 +10,18 @@
     </style>
 
     <style name="AppTheme.Light">
+        <item name="colorPrimary">@color/lightActiveColor</item>
+        <item name="colorPrimaryVariant">@color/lightInactiveColor</item>
+        <item name="colorOnPrimary">@color/lightBackgroundColor</item>
+
+        <item name="colorPrimaryDark">@color/lightInactiveColor</item>
+
+        <item name="colorSecondary">@color/lightActiveColor</item>
+        <item name="colorSecondaryVariant">@color/lightActiveColor</item>
+        <item name="colorOnSecondary">@color/lightBackgroundColor</item>
+
         <item name="activeColor">@color/lightActiveColor</item>
+        <item name="activeInvertColor">@color/lightBackgroundColor</item>
         <item name="inactiveColor">@color/lightInactiveColor</item>
         <item name="backgroundColor">@color/lightBackgroundColor</item>
     </style>

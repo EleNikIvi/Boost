@@ -4,21 +4,20 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.Observer
 import com.eugene.boost.R
 import com.eugene.boost.ui.base.BaseFragment
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class ProjectsFragment : BaseFragment() {
 
-    val projectsViewModel: ProjectsViewModel by viewModel()
+    private val _projectsViewModel: ProjectsViewModel by viewModel()
 
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
-        setHasOptionsMenu(true)
 
         return inflater.inflate(R.layout.fragment_project_projects, container, false)
     }
@@ -33,5 +32,11 @@ class ProjectsFragment : BaseFragment() {
     private fun initView() {
 
         setToolbarTitle(getString(R.string.app_projects))
+
+        _projectsViewModel.isLoading.observe(this, Observer {
+
+        })
+
+        _projectsViewModel.loadProjects()
     }
 }

@@ -12,7 +12,7 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class DashboardFragment : BaseFragment() {
 
-    val dashboardViewModel: DashboardViewModel by viewModel()
+    private val _dashboardViewModel: DashboardViewModel by viewModel()
 
 
     override fun onCreateView(
@@ -32,15 +32,15 @@ class DashboardFragment : BaseFragment() {
     }
 
 
-    override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater?) {
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)
 
-        inflater?.inflate(R.menu.menu_main, menu)
+        inflater.inflate(R.menu.menu_main, menu)
     }
 
-    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
 
-        when (item?.itemId) {
+        when (item.itemId) {
             R.id.all_projects_item -> {
 
                 findNavController().navigate(R.id.project_projects_fragment)

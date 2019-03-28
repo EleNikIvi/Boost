@@ -10,7 +10,7 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class EditorFragment : BaseFragment() {
 
-    private val editorViewModel: EditorViewModel by viewModel()
+    private val _editorViewModel: EditorViewModel by viewModel()
 
 
     override fun onCreateView(

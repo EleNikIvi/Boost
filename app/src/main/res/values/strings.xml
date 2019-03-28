@@ -6,4 +6,6 @@
     <string name="app_month">Month</string>
     <string name="app_settings">Settings</string>
     <string name="app_projects">Projects</string>
+
+    <string name="project_projects_list_empty">You have no projects yet!</string>
 </resources>

@@ -1,8 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.project.projects.ProjectsFragment">
 
-</FrameLayout>
+    <!-- Empty List: -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/list_empty_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/lightBackgroundColor">
+
+        <ImageView
+            android:id="@+id/list_empty_icon_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="@dimen/app_empty_screen_icon_size"
+            android:minHeight="@dimen/app_empty_screen_icon_size"
+            android:src="@drawable/ic_folder_open_black_24dp"
+            android:tint="?inactiveColor"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.45" />
+
+        <TextView
+            android:id="@+id/list_empty_message_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/app_empty_screen_description_margin_top"
+            android:text="@string/project_projects_list_empty"
+            android:textColor="?inactiveColor"
+            android:textSize="@dimen/app_empty_screen_description_text_size"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/list_empty_icon_image" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <!-- :Empty List -->
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/projects_floating_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="?activeColor"
+        android:src="@drawable/ic_add_black_24dp"
+        app:layout_anchor="@id/projects_bottom_bar" />
+
+    <com.google.android.material.bottomappbar.BottomAppBar
+        android:id="@+id/projects_bottom_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        app:fabAlignmentMode="end" />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
