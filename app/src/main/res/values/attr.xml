@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <attr name="activeColor" format="reference" />
-    <attr name="activeInvertColor" format="reference" />
-    <attr name="inactiveColor" format="reference" />
-    <attr name="backgroundColor" format="reference" />
+    <attr name="colorActive" format="reference" />
+    <attr name="colorOnActive" format="reference" />
+    <attr name="colorInactive" format="reference" />
+    <attr name="colorBackground" format="reference" />
 </resources>

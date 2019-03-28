@@ -7,22 +7,22 @@
     tools:context=".ui.dashboard.DashboardFragment">
 
     <fragment
-        android:id="@+id/dashboard_navigation"
+        android:id="@+id/nav_dashboard"
         android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@id/dashboard_bottom_navigation"
+        android:layout_above="@id/bnv"
         app:navGraph="@navigation/navigation_dashboard" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/dashboard_bottom_navigation"
+        android:id="@+id/bnv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_gravity="bottom"
-        android:background="?backgroundColor"
+        android:background="?colorBackground"
         app:itemIconTint="@drawable/sl_bottom_navigation_item"
         app:itemTextColor="@drawable/sl_bottom_navigation_item"
         app:labelVisibilityMode="labeled"
-        app:menu="@menu/menu_dashboard_bottom" />
+        app:menu="@menu/menu_dashboard_bnv" />
 </RelativeLayout>

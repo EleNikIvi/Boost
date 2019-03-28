@@ -8,19 +8,19 @@
 
     <!-- Empty List: -->
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/list_empty_view"
+        android:id="@+id/viw_empty_screen"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/lightBackgroundColor">
 
         <ImageView
-            android:id="@+id/list_empty_icon_image"
+            android:id="@+id/img_empty_screen_icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:minWidth="@dimen/app_empty_screen_icon_size"
             android:minHeight="@dimen/app_empty_screen_icon_size"
             android:src="@drawable/ic_folder_open_black_24dp"
-            android:tint="?inactiveColor"
+            android:tint="?colorInactive"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -28,29 +28,30 @@
             app:layout_constraintVertical_bias="0.45" />
 
         <TextView
-            android:id="@+id/list_empty_message_text"
+            android:id="@+id/txt_empty_screen_description"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/app_empty_screen_description_margin_top"
+            android:fontFamily="@font/roboto_medium"
             android:text="@string/project_projects_list_empty"
-            android:textColor="?inactiveColor"
+            android:textColor="?colorInactive"
             android:textSize="@dimen/app_empty_screen_description_text_size"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/list_empty_icon_image" />
+            app:layout_constraintTop_toBottomOf="@+id/img_empty_screen_icon" />
     </androidx.constraintlayout.widget.ConstraintLayout>
     <!-- :Empty List -->
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/projects_floating_button"
+        android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="?activeColor"
+        android:backgroundTint="?colorActive"
         android:src="@drawable/ic_add_black_24dp"
-        app:layout_anchor="@id/projects_bottom_bar" />
+        app:layout_anchor="@id/bab" />
 
     <com.google.android.material.bottomappbar.BottomAppBar
-        android:id="@+id/projects_bottom_bar"
+        android:id="@+id/bab"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"

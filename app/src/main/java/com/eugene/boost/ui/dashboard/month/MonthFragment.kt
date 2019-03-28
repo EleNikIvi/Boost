@@ -10,7 +10,7 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MonthFragment : BaseFragment() {
 
-    val monthViewModel: MonthViewModel by viewModel()
+    private val _monthViewModel: MonthViewModel by viewModel()
 
 
     override fun onCreateView(

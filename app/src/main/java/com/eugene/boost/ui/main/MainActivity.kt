@@ -10,9 +10,9 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainActivity : BaseActivity() {
 
-    val mainViewModel: MainViewModel by viewModel()
+    private val _mainViewModel: MainViewModel by viewModel()
 
-    var mainToolbar: Toolbar? = null
+    var toolbar: Toolbar? = null
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,16 +28,16 @@ class MainActivity : BaseActivity() {
 
     private fun initView() {
 
-        mainToolbar = findViewById(R.id.main_toolbar)
+        toolbar = findViewById(R.id.tlb)
 
-        mainToolbar?.let {
+        toolbar?.let {
 
             setSupportActionBar(it)
 
             supportActionBar?.title = getString(R.string.app_name)
 
             it.setupWithNavController(
-                Navigation.findNavController(this, R.id.main_navigation)
+                Navigation.findNavController(this, R.id.nav_main)
             )
         }
     }

@@ -10,7 +10,7 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class TodayFragment : BaseFragment() {
 
-    val todayViewModel: TodayViewModel by viewModel()
+    private val _todayViewModel: TodayViewModel by viewModel()
 
 
     override fun onCreateView(

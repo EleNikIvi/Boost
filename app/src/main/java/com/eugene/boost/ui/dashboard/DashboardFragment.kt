@@ -35,7 +35,7 @@ class DashboardFragment : BaseFragment() {
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)
 
-        inflater.inflate(R.menu.menu_main, menu)
+        inflater.inflate(R.menu.menu_dashboard_tlb, menu)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -59,8 +59,8 @@ class DashboardFragment : BaseFragment() {
 
         NavigationUI
             .setupWithNavController(
-                dashboard_bottom_navigation,
-                Navigation.findNavController(requireActivity(), R.id.dashboard_navigation)
+                bnv,
+                Navigation.findNavController(requireActivity(), R.id.nav_dashboard)
             )
     }
 }

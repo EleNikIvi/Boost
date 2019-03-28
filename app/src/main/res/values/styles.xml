@@ -1,6 +1,7 @@
 <resources>
 
     <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="android:fontFamily">@font/roboto_medium</item>
         <item name="android:windowBackground">@android:color/transparent</item>
     </style>
 
@@ -20,16 +21,16 @@
         <item name="colorSecondaryVariant">@color/lightActiveColor</item>
         <item name="colorOnSecondary">@color/lightBackgroundColor</item>
 
-        <item name="activeColor">@color/lightActiveColor</item>
-        <item name="activeInvertColor">@color/lightBackgroundColor</item>
-        <item name="inactiveColor">@color/lightInactiveColor</item>
-        <item name="backgroundColor">@color/lightBackgroundColor</item>
+        <item name="colorActive">@color/lightActiveColor</item>
+        <item name="colorOnActive">@color/lightBackgroundColor</item>
+        <item name="colorInactive">@color/lightInactiveColor</item>
+        <item name="colorBackground">@color/lightBackgroundColor</item>
     </style>
 
     <style name="AppToolbar">
-        <item name="android:background">?backgroundColor</item>
-        <item name="android:textColorPrimary">?activeColor</item>
-        <item name="android:textColorSecondary">?activeColor</item>
-        <item name="android:tint">?activeColor</item>
+        <item name="android:background">?colorBackground</item>
+        <item name="android:textColorPrimary">?colorActive</item>
+        <item name="android:textColorSecondary">?colorActive</item>
+        <item name="android:tint">?colorActive</item>
     </style>
 </resources>

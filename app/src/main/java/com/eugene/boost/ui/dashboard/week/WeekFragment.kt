@@ -10,7 +10,7 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class WeekFragment : BaseFragment() {
 
-    val weekViewModel: WeekViewModel by viewModel()
+    private val _weekViewModel: WeekViewModel by viewModel()
 
 
     override fun onCreateView(
