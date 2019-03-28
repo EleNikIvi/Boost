@@ -11,11 +11,11 @@
         android:label="dashboard_fragment"
         tools:layout="@layout/fragment_dashboard">
         <action
-            android:id="@+id/action_dashboard_fragment_to_settings_fragment"
-            app:destination="@id/settings_fragment" />
-        <action
-            android:id="@+id/action_dashboard_fragment_to_all_projects_fragment"
+            android:id="@+id/open_projects"
             app:destination="@id/project_projects_fragment" />
+        <action
+            android:id="@+id/open_settings"
+            app:destination="@id/settings_fragment" />
     </fragment>
 
     <fragment
@@ -26,6 +26,15 @@
     <fragment
         android:id="@+id/project_projects_fragment"
         android:name="com.eugene.boost.ui.project.projects.ProjectsFragment"
-        android:label="project_all_projects_fragment"
-        tools:layout="@layout/fragment_project_projects" />
+        android:label="project_projects_fragment"
+        tools:layout="@layout/fragment_project_projects">
+        <action
+            android:id="@+id/create_project"
+            app:destination="@id/project_editor_fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/project_editor_fragment"
+        android:name="com.eugene.boost.ui.project.editor.EditorFragment"
+        android:label="project_editor_fragment"
+        tools:layout="@layout/fragment_project_editor" />
 </navigation>

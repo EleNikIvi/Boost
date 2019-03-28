@@ -5,8 +5,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import com.eugene.boost.R
 import com.eugene.boost.ui.base.BaseFragment
+import kotlinx.android.synthetic.main.fragment_project_projects.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class ProjectsFragment : BaseFragment() {
@@ -38,5 +40,10 @@ class ProjectsFragment : BaseFragment() {
         })
 
         _projectsViewModel.loadProjects()
+
+        fab.setOnClickListener {
+
+            findNavController().navigate(ProjectsFragmentDirections.createProject())
+        }
     }
 }
