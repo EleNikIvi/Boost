@@ -15,6 +15,7 @@ import com.eugene.boost.ui.dashboard.week.WeekViewModel
 import com.eugene.boost.ui.main.MainViewModel
 import com.eugene.boost.ui.project.editor.EditorViewModel
 import com.eugene.boost.ui.project.projects.ProjectsViewModel
+import org.koin.android.ext.koin.androidApplication
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
@@ -22,7 +23,7 @@ val appModule = module {
 
     single {
         Room
-            .databaseBuilder(get(), AppDatabase::class.java, AppConstants.AppDatabaseName)
+            .databaseBuilder(androidApplication(), AppDatabase::class.java, AppConstants.AppDatabaseName)
             .build()
     }
 
@@ -41,5 +42,5 @@ val appModule = module {
     viewModel { MonthViewModel() }
 
     viewModel { ProjectsViewModel(get()) }
-    viewModel { EditorViewModel() }
+    viewModel { EditorViewModel(get()) }
 }
