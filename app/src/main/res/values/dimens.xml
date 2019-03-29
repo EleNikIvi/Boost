@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <dimen name="app_screen_padding">16dp</dimen>
+
+    <dimen name="app_form_item_margin">16dp</dimen>
+
     <dimen name="app_empty_screen_icon_size">128dp</dimen>
     <dimen name="app_empty_screen_description_margin_top">8dp</dimen>
     <dimen name="app_empty_screen_description_text_size">16sp</dimen>

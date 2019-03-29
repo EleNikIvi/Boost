@@ -33,7 +33,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/app_empty_screen_description_margin_top"
             android:fontFamily="@font/roboto_medium"
-            android:text="@string/project_projects_list_empty"
+            android:text="@string/project_projects_empty_screen_description"
             android:textColor="?colorInactive"
             android:textSize="@dimen/app_empty_screen_description_text_size"
             app:layout_constraintEnd_toEndOf="parent"
