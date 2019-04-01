@@ -6,41 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".ui.project.projects.ProjectsFragment">
 
-    <!-- Empty List: -->
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/viw_empty_screen"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/lightBackgroundColor">
-
-        <ImageView
-            android:id="@+id/img_empty_screen_icon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:minWidth="@dimen/app_empty_screen_icon_size"
-            android:minHeight="@dimen/app_empty_screen_icon_size"
-            android:src="@drawable/ic_folder_open_black_24dp"
-            android:tint="?colorInactive"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.45" />
-
-        <TextView
-            android:id="@+id/txt_empty_screen_description"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/app_empty_screen_description_margin_top"
-            android:fontFamily="@font/roboto_medium"
-            android:text="@string/project_projects_empty_screen_description"
-            android:textColor="?colorInactive"
-            android:textSize="@dimen/app_empty_screen_description_text_size"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/img_empty_screen_icon" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-    <!-- :Empty List -->
+    <include layout="@layout/view_empty_screen" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"
