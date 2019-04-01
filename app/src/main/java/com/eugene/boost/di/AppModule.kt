@@ -24,6 +24,7 @@ val appModule = module {
     single {
         Room
             .databaseBuilder(androidApplication(), AppDatabase::class.java, AppConstants.AppDatabaseName)
+            .allowMainThreadQueries()
             .build()
     }
 
