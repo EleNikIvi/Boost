@@ -61,7 +61,7 @@ class EditorFragment : BaseFragment() {
 
             _editorViewModel.saveChanges(edt_name.text.toString())
 
-            findNavController().navigate(R.id.project_projects_fragment)
+            findNavController().navigateUp()
         }
     }
 }
