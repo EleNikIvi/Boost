@@ -10,5 +10,6 @@ class EditorViewModel(private val projectRepository: ProjectRepository) : BaseVi
 
     fun saveChanges(name: String) {
 
+        projectRepository.createProject(name)
     }
 }

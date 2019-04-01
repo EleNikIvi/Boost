@@ -6,6 +6,7 @@ import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.eugene.boost.AppConstants
 import com.eugene.boost.R
 import com.eugene.boost.ui.base.BaseFragment
@@ -59,6 +60,8 @@ class EditorFragment : BaseFragment() {
         btn_save.setOnClickListener {
 
             _editorViewModel.saveChanges(edt_name.text.toString())
+
+            findNavController().navigate(R.id.project_projects_fragment)
         }
     }
 }

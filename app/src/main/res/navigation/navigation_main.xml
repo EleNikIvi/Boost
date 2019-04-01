@@ -36,5 +36,9 @@
         android:id="@+id/project_editor_fragment"
         android:name="com.eugene.boost.ui.project.editor.EditorFragment"
         android:label="project_editor_fragment"
-        tools:layout="@layout/fragment_project_editor" />
+        tools:layout="@layout/fragment_project_editor">
+        <action
+            android:id="@+id/open_projects"
+            app:destination="@id/project_projects_fragment" />
+    </fragment>
 </navigation>
