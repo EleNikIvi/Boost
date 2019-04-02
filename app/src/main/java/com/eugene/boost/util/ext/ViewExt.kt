@@ -1,4 +1,4 @@
-package com.eugene.boost.util
+package com.eugene.boost.util.ext
 
 import android.view.View
 
