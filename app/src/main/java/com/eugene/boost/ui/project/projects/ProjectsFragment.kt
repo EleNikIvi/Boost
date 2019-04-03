@@ -6,10 +6,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.eugene.boost.R
 import com.eugene.boost.ui.base.BaseFragment
-import com.eugene.boost.util.gone
-import com.eugene.boost.util.visible
+import com.eugene.boost.ui.project.projects.epoxy.project
+import com.eugene.boost.util.ext.gone
+import com.eugene.boost.util.ext.visible
+import com.eugene.boost.util.lib.epoxy.withModels
 import kotlinx.android.synthetic.main.fragment_project_projects.*
 import kotlinx.android.synthetic.main.view_empty_screen.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -49,6 +52,25 @@ class ProjectsFragment : BaseFragment() {
         _projectsViewModel.projects.observe(this, Observer {
 
             if (it.isNotEmpty()) {
+
+                if (rcv_projects.adapter == null) {
+
+                    rcv_projects.layoutManager = LinearLayoutManager(activity)
+                    rcv_projects.withModels {
+
+                        it?.forEach {
+
+                            project {
+                                id(it.id)
+                                name(it.name)
+                            }
+                        }
+                    }
+                } else {
+                    rcv_projects.requestModelBuild()
+                }
+
+
                 viw_empty_screen.gone()
             } else {
                 viw_empty_screen.visible()
