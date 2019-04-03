@@ -22,9 +22,9 @@ class ProjectsViewModel(private val projectRepository: ProjectRepository) : Base
 
     fun loadProjects() {
 
-        _isLoading.postValue(true)
-
         CoroutineScope(Dispatchers.IO).launch {
+
+            _isLoading.postValue(true)
 
             _projects.postValue(projectRepository.getAllProjects())
 
