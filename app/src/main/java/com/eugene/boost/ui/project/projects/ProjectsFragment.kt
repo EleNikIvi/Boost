@@ -53,6 +53,14 @@ class ProjectsFragment : BaseFragment() {
         _projectsViewModel.loadProjects()
     }
 
+
+    private fun setupViewListeners() {
+
+        fab.setOnClickListener {
+            findNavController().navigate(ProjectsFragmentDirections.createProject())
+        }
+    }
+
     private fun setupEmptyScreen() {
 
         img_empty_screen_icon.setImageResource(R.drawable.ic_folder_open_black_24dp)
@@ -64,10 +72,9 @@ class ProjectsFragment : BaseFragment() {
         if (rcv_projects.adapter == null) {
 
             rcv_projects.layoutManager = LinearLayoutManager(activity)
+
             rcv_projects.withModels {
-
                 projects.forEach {
-
                     project {
                         id(it.id)
                         name(it.name)
@@ -75,7 +82,6 @@ class ProjectsFragment : BaseFragment() {
                 }
             }
         } else {
-
             rcv_projects.requestModelBuild()
         }
     }
@@ -90,22 +96,12 @@ class ProjectsFragment : BaseFragment() {
         _projectsViewModel.projects.observe(this, Observer {
 
             if (it.isNotEmpty()) {
-
                 setupProjectList(it)
                 viw_empty_screen.gone()
             } else {
-
                 setupEmptyScreen()
                 viw_empty_screen.visible()
             }
         })
-    }
-
-    private fun setupViewListeners() {
-
-        fab.setOnClickListener {
-
-            findNavController().navigate(ProjectsFragmentDirections.createProject())
-        }
     }
 }

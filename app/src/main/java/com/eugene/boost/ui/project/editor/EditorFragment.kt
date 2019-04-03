@@ -1,21 +1,27 @@
 package com.eugene.boost.ui.project.editor
 
+import android.app.Dialog
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.eugene.boost.AppConstants
 import com.eugene.boost.R
 import com.eugene.boost.ui.base.BaseFragment
+import com.eugene.boost.util.DialogUtil
+import com.eugene.boost.util.KeyboardUtil
 import kotlinx.android.synthetic.main.fragment_project_editor.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class EditorFragment : BaseFragment() {
 
     private val _editorViewModel: EditorViewModel by viewModel()
+
+    private val _progressDialog: Dialog by lazy { DialogUtil.getProgressDialog(activity!!) }
 
 
     override fun onCreateView(
@@ -32,6 +38,13 @@ class EditorFragment : BaseFragment() {
         initView()
     }
 
+    override fun onPause() {
+
+        KeyboardUtil.hideKeyboard(activity!!)
+
+        super.onPause()
+    }
+
 
     private fun initView() {
 
@@ -43,6 +56,15 @@ class EditorFragment : BaseFragment() {
             else
                 getString(R.string.project_editor_title_edit_project)
         )
+
+        btn_save.isEnabled = _editorViewModel.projectId != null
+
+        setupViewListeners()
+
+        subscribeToViewModel()
+    }
+
+    private fun setupViewListeners() {
 
         edt_name.addTextChangedListener(object : TextWatcher {
 
@@ -56,12 +78,24 @@ class EditorFragment : BaseFragment() {
             }
         })
 
-        btn_save.isEnabled = _editorViewModel.projectId != null
         btn_save.setOnClickListener {
 
             _editorViewModel.saveChanges(edt_name.text.toString())
-
-            findNavController().navigateUp()
         }
+    }
+
+    private fun subscribeToViewModel() {
+
+        _editorViewModel.isSaving.observe(this, Observer {
+
+            if (it) {
+                _progressDialog.show()
+            } else {
+
+                findNavController().navigateUp()
+
+                _progressDialog.hide()
+            }
+        })
     }
 }
