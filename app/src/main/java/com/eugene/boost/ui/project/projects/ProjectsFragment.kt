@@ -2,6 +2,7 @@ package com.eugene.boost.ui.project.projects
 
 import android.app.Dialog
 import android.os.Bundle
+import android.util.TypedValue
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,13 +11,16 @@ import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.airbnb.epoxy.EpoxyTouchHelper
 import com.eugene.boost.R
 import com.eugene.boost.domain.model.ProjectModel
 import com.eugene.boost.ui.base.BaseFragment
+import com.eugene.boost.ui.project.projects.epoxy.ProjectEpoxyModel
 import com.eugene.boost.ui.project.projects.epoxy.project
 import com.eugene.boost.util.DialogUtil
 import com.eugene.boost.util.ext.gone
 import com.eugene.boost.util.ext.visible
+import com.eugene.boost.util.lib.epoxy.EpoxyKotlinSwipeCallbacks
 import com.eugene.boost.util.lib.epoxy.withModels
 import kotlinx.android.synthetic.main.fragment_project_projects.*
 import kotlinx.android.synthetic.main.view_empty_screen.*
@@ -71,30 +75,53 @@ class ProjectsFragment : BaseFragment() {
 
     private fun setupProjectList(projects: List<ProjectModel>) {
 
-        if (rcv_projects.adapter == null) {
+        val rcvLayoutManager = LinearLayoutManager(activity)
+        rcv_projects.layoutManager = rcvLayoutManager
 
-            val rcvLayoutManager = LinearLayoutManager(activity)
-            rcv_projects.layoutManager = rcvLayoutManager
+        rcv_projects.withModels {
+            projects.forEach {
+                project {
+                    id(it.id)
+                    name(it.name)
+                    itemClickListener {
 
-            rcv_projects.withModels {
-                projects.forEach {
-                    project {
-                        id(it.id)
-                        name(it.name)
                     }
                 }
             }
-
-            rcv_projects.addItemDecoration(
-                DividerItemDecoration(
-                    rcv_projects.context,
-                    rcvLayoutManager.orientation
-                ).apply {
-                    setDrawable(ContextCompat.getDrawable(context!!, R.drawable.list_item_decoration)!!)
-                })
-        } else {
-            rcv_projects.requestModelBuild()
         }
+
+        rcv_projects.addItemDecoration(
+            DividerItemDecoration(
+                rcv_projects.context,
+                rcvLayoutManager.orientation
+            ).apply {
+                setDrawable(ContextCompat.getDrawable(context!!, R.drawable.list_item_decoration)!!)
+            })
+
+        val itemBackgroundColor = TypedValue()
+        context!!.theme.resolveAttribute(R.attr.colorInactiveLight, itemBackgroundColor, true)
+
+        val swipes = object : EpoxyKotlinSwipeCallbacks<ProjectEpoxyModel>(
+            _leftIcon = context?.getDrawable(R.drawable.ic_delete_black_24dp),
+            _leftIconColor = context!!.getColor(R.color.whiteColor),
+            _foregroundLeftColor = context!!.getColor(R.color.redColor),
+            _backgroundColor = itemBackgroundColor.data,
+            _padding = context!!.resources.getDimensionPixelSize(R.dimen.app_space_lg)
+        ) {
+            override fun onSwipeCompleted(
+                model: ProjectEpoxyModel,
+                itemView: View,
+                position: Int,
+                direction: Int
+            ) {
+
+            }
+        }
+
+        EpoxyTouchHelper.initSwiping(rcv_projects)
+            .left()
+            .withTarget(ProjectEpoxyModel::class.java)
+            .andCallbacks(swipes)
     }
 
     private fun subscribeToViewModel() {
