@@ -10,21 +10,22 @@
         <item name="android:windowBackground">@color/launcherColor</item>
     </style>
 
-    <style name="AppTheme.Light">
-        <item name="colorPrimary">@color/lightActiveColor</item>
-        <item name="colorPrimaryVariant">@color/lightInactiveColor</item>
-        <item name="colorOnPrimary">@color/lightBackgroundColor</item>
+    <style name="AppTheme.Paper">
+        <item name="colorPrimary">@color/paperActiveColor</item>
+        <item name="colorPrimaryVariant">@color/paperInactiveColor</item>
+        <item name="colorOnPrimary">@color/paperBackgroundColor</item>
 
-        <item name="colorPrimaryDark">@color/lightInactiveColor</item>
+        <item name="colorPrimaryDark">@color/paperInactiveColor</item>
 
-        <item name="colorSecondary">@color/lightActiveColor</item>
-        <item name="colorSecondaryVariant">@color/lightActiveColor</item>
-        <item name="colorOnSecondary">@color/lightBackgroundColor</item>
+        <item name="colorSecondary">@color/paperActiveColor</item>
+        <item name="colorSecondaryVariant">@color/paperActiveColor</item>
+        <item name="colorOnSecondary">@color/paperBackgroundColor</item>
 
-        <item name="colorActive">@color/lightActiveColor</item>
-        <item name="colorOnActive">@color/lightBackgroundColor</item>
-        <item name="colorInactive">@color/lightInactiveColor</item>
-        <item name="colorBackground">@color/lightBackgroundColor</item>
+        <item name="colorActive">@color/paperActiveColor</item>
+        <item name="colorOnActive">@color/paperBackgroundColor</item>
+        <item name="colorInactive">@color/paperInactiveColor</item>
+        <item name="colorInactiveLight">@color/paperInactiveLightColor</item>
+        <item name="colorBackground">@color/paperBackgroundColor</item>
     </style>
 
     <style name="AppToolbar">

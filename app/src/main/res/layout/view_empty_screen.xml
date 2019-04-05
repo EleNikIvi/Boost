@@ -4,7 +4,7 @@
     android:id="@+id/viw_empty_screen"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/lightBackgroundColor">
+    android:background="?colorBackground">
 
     <ImageView
         android:id="@+id/img_empty_screen_icon"

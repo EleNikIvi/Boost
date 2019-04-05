@@ -3,5 +3,6 @@
     <attr name="colorActive" format="reference" />
     <attr name="colorOnActive" format="reference" />
     <attr name="colorInactive" format="reference" />
+    <attr name="colorInactiveLight" format="reference" />
     <attr name="colorBackground" format="reference" />
 </resources>

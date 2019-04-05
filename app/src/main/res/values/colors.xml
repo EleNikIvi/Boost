@@ -2,7 +2,11 @@
 <resources>
     <color name="launcherColor">#FFFFFF</color>
 
-    <color name="lightActiveColor">#333333</color>
-    <color name="lightInactiveColor">#999999</color>
-    <color name="lightBackgroundColor">#FFFFFF</color>
+    <color name="paperActiveColor">#333333</color>
+    <color name="paperInactiveColor">#999999</color>
+    <color name="paperInactiveLightColor">#CCCCCC</color>
+    <color name="paperBackgroundColor">#FFFFFF</color>
+
+    <color name="whiteColor">#FFFFFF</color>
+    <color name="redColor">#DE4C4A</color>
 </resources>
