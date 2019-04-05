@@ -6,5 +6,5 @@ import com.eugene.boost.util.lib.epoxy.EpoxyKotlinHolder
 
 class ProjectEpoxyHolder : EpoxyKotlinHolder() {
 
-    val txtName by bind<TextView>(R.id.txt_name)
+    val txtName by bind<TextView>(R.id.txt_project_name)
 }

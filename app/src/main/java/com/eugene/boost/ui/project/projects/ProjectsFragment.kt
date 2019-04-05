@@ -5,8 +5,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.eugene.boost.R
 import com.eugene.boost.domain.model.ProjectModel
@@ -71,7 +73,8 @@ class ProjectsFragment : BaseFragment() {
 
         if (rcv_projects.adapter == null) {
 
-            rcv_projects.layoutManager = LinearLayoutManager(activity)
+            val rcvLayoutManager = LinearLayoutManager(activity)
+            rcv_projects.layoutManager = rcvLayoutManager
 
             rcv_projects.withModels {
                 projects.forEach {
@@ -81,6 +84,14 @@ class ProjectsFragment : BaseFragment() {
                     }
                 }
             }
+
+            rcv_projects.addItemDecoration(
+                DividerItemDecoration(
+                    rcv_projects.context,
+                    rcvLayoutManager.orientation
+                ).apply {
+                    setDrawable(ContextCompat.getDrawable(context!!, R.drawable.list_item_decoration)!!)
+                })
         } else {
             rcv_projects.requestModelBuild()
         }
