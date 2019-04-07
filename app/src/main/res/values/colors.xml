@@ -8,5 +8,6 @@
     <color name="paperBackgroundColor">#FFFFFF</color>
 
     <color name="whiteColor">#FFFFFF</color>
-    <color name="redColor">#DE4C4A</color>
+    <color name="redColor">#DB4035</color>
+    <color name="orangeColor">#FF9933</color>
 </resources>

@@ -102,8 +102,11 @@ class ProjectsFragment : BaseFragment() {
         context!!.theme.resolveAttribute(R.attr.colorInactiveLight, itemBackgroundColor, true)
 
         val swipes = object : EpoxyKotlinSwipeCallbacks<ProjectEpoxyModel>(
+            _rightIcon = context?.getDrawable(R.drawable.ic_edit_black_24dp),
             _leftIcon = context?.getDrawable(R.drawable.ic_delete_black_24dp),
+            _rightIconColor = context!!.getColor(R.color.whiteColor),
             _leftIconColor = context!!.getColor(R.color.whiteColor),
+            _foregroundRightColor = context!!.getColor(R.color.orangeColor),
             _foregroundLeftColor = context!!.getColor(R.color.redColor),
             _backgroundColor = itemBackgroundColor.data,
             _padding = context!!.resources.getDimensionPixelSize(R.dimen.app_space_lg)
@@ -119,7 +122,7 @@ class ProjectsFragment : BaseFragment() {
         }
 
         EpoxyTouchHelper.initSwiping(rcv_projects)
-            .left()
+            .leftAndRight()
             .withTarget(ProjectEpoxyModel::class.java)
             .andCallbacks(swipes)
     }
