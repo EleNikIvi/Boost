@@ -136,8 +136,10 @@ class ProjectsFragment : BaseFragment() {
             if (it.isNotEmpty()) {
                 setupProjectList(it)
                 viw_empty_screen.gone()
+                rcv_projects.visible()
             } else {
                 setupEmptyScreen()
+                rcv_projects.gone()
                 viw_empty_screen.visible()
             }
         })
