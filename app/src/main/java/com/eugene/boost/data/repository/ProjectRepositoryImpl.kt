@@ -21,6 +21,11 @@ class ProjectRepositoryImpl(private val projectDao: ProjectDao) : ProjectReposit
         projectDao.update(ProjectEntityMapper().mapToEntity(project))
     }
 
+    override fun deleteProject(id: Int) {
+
+        projectDao.deleteById(id)
+    }
+
     override fun getProject(id: Int): ProjectModel {
 
         return ProjectEntityMapper().mapToModel(projectDao.getById(id))

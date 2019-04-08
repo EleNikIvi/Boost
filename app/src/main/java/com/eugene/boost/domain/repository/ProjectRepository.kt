@@ -8,6 +8,8 @@ interface ProjectRepository {
 
     fun updateProject(project: ProjectModel?)
 
+    fun deleteProject(id: Int)
+
     fun getProject(id: Int): ProjectModel
 
     fun getAllProjects(): List<ProjectModel>
