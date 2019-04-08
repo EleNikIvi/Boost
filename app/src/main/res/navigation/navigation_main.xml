@@ -29,12 +29,17 @@
         android:label="project_projects_fragment"
         tools:layout="@layout/fragment_project_projects">
         <action
-            android:id="@+id/create_project"
+            android:id="@+id/open_project_editor"
             app:destination="@id/project_editor_fragment" />
     </fragment>
     <fragment
         android:id="@+id/project_editor_fragment"
         android:name="com.eugene.boost.ui.project.editor.EditorFragment"
         android:label="project_editor_fragment"
-        tools:layout="@layout/fragment_project_editor" />
+        tools:layout="@layout/fragment_project_editor">
+        <argument
+            android:name="project_id"
+            android:defaultValue="-1"
+            app:argType="integer" />
+    </fragment>
 </navigation>
