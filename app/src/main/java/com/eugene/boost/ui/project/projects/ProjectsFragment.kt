@@ -63,7 +63,7 @@ class ProjectsFragment : BaseFragment() {
     private fun setupViewListeners() {
 
         fab.setOnClickListener {
-            findNavController().navigate(ProjectsFragmentDirections.createProject())
+            findNavController().navigate(ProjectsFragmentDirections.openProjectEditor())
         }
     }
 
@@ -82,7 +82,8 @@ class ProjectsFragment : BaseFragment() {
             projects.forEach {
                 project {
                     id(it.id)
-                    name(it.name)
+                    projectId(it.id)
+                    projectName(it.name)
                     itemClickListener {
 
                     }
@@ -117,7 +118,10 @@ class ProjectsFragment : BaseFragment() {
                 position: Int,
                 direction: Int
             ) {
-
+                when (direction) {
+                    //4 ->
+                    8 -> findNavController().navigate(ProjectsFragmentDirections.openProjectEditor(model.projectId))
+                }
             }
         }
 

@@ -9,7 +9,10 @@ import com.eugene.boost.R
 abstract class ProjectEpoxyModel : EpoxyModelWithHolder<ProjectEpoxyHolder>() {
 
     @EpoxyAttribute
-    lateinit var name: String
+    var projectId: Int = 0
+
+    @EpoxyAttribute
+    lateinit var projectName: String
 
     @EpoxyAttribute
     lateinit var itemClickListener: () -> Unit
@@ -18,7 +21,7 @@ abstract class ProjectEpoxyModel : EpoxyModelWithHolder<ProjectEpoxyHolder>() {
     override fun bind(holder: ProjectEpoxyHolder) {
         super.bind(holder)
 
-        holder.txtName.text = name
+        holder.txtProjectName.text = projectName
         holder.viwRoot.setOnClickListener { itemClickListener() }
     }
 }
