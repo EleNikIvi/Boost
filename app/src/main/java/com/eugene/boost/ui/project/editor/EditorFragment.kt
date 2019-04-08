@@ -4,6 +4,7 @@ import android.app.Dialog
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -48,20 +49,22 @@ class EditorFragment : BaseFragment() {
 
     private fun initView() {
 
-        _editorViewModel.projectId = arguments?.get("PROJECT_ID")?.toString()?.toIntOrNull()
+        _editorViewModel.projectId = arguments!!.getInt("project_id")
 
         setToolbarTitle(
-            if (_editorViewModel.projectId == null)
+            if (_editorViewModel.isCreating)
                 getString(R.string.project_editor_title_new_project)
             else
                 getString(R.string.project_editor_title_edit_project)
         )
 
-        btn_save.isEnabled = _editorViewModel.projectId != null
+        btn_save.isEnabled = _editorViewModel.isEditing
 
         setupViewListeners()
 
         subscribeToViewModel()
+
+        loadData()
     }
 
     private fun setupViewListeners() {
@@ -86,16 +89,30 @@ class EditorFragment : BaseFragment() {
 
     private fun subscribeToViewModel() {
 
+        _editorViewModel.isLoading.observe(this, Observer {
+
+            if (it) _progressDialog.show() else _progressDialog.hide()
+        })
+
         _editorViewModel.isSaving.observe(this, Observer {
 
             if (it) {
                 _progressDialog.show()
             } else {
+                _progressDialog.hide()
 
                 findNavController().navigateUp()
-
-                _progressDialog.hide()
             }
         })
+
+        _editorViewModel.project.observe(this, Observer {
+
+            edt_name.setText(it.name)
+        })
+    }
+
+    private fun loadData() {
+
+        _editorViewModel.loadProject(_editorViewModel.projectId)
     }
 }

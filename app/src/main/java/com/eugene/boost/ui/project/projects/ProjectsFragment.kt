@@ -56,9 +56,8 @@ class ProjectsFragment : BaseFragment() {
 
         subscribeToViewModel()
 
-        _projectsViewModel.loadProjects()
+        loadData()
     }
-
 
     private fun setupViewListeners() {
 
@@ -150,5 +149,10 @@ class ProjectsFragment : BaseFragment() {
                 viw_empty_screen.visible()
             }
         })
+    }
+
+    private fun loadData() {
+
+        _projectsViewModel.loadProjects()
     }
 }
