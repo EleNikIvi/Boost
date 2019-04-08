@@ -6,6 +6,8 @@ interface ProjectRepository {
 
     fun createProject(name: String)
 
+    fun updateProject(project: ProjectModel?)
+
     fun getProject(id: Int): ProjectModel
 
     fun getAllProjects(): List<ProjectModel>

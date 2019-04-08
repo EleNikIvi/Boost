@@ -13,6 +13,14 @@ class ProjectRepositoryImpl(private val projectDao: ProjectDao) : ProjectReposit
         projectDao.insert(ProjectEntity(0, System.currentTimeMillis(), name, 0))
     }
 
+    override fun updateProject(project: ProjectModel?) {
+
+        if (project == null) return
+
+
+        projectDao.update(ProjectEntityMapper().mapToEntity(project))
+    }
+
     override fun getProject(id: Int): ProjectModel {
 
         return ProjectEntityMapper().mapToModel(projectDao.getById(id))
